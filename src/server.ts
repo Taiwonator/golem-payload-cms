@@ -7,7 +7,7 @@ const app = express();
 
 // Enables requests from custom subdomain
 const corsOptions = {
-  origin: 'https://admin.golemoutreach.org',
+  origin: process.env.GOLEM_ADMIN_URL,
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
