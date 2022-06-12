@@ -1,8 +1,17 @@
 import express from 'express';
 import payload from 'payload';
+import cors from 'cors'
 
 require('dotenv').config();
 const app = express();
+
+// Enables requests from custom subdomain
+const corsOptions = {
+  origin: 'https://admin.golemoutreach.org',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions))
 
 // Redirect root to Admin panel
 app.get('/', (_, res) => {
