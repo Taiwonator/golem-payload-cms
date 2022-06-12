@@ -233,3 +233,7 @@ components/styles.css
 
 # Ignore generated
 demo/generated-types.ts
+
+# Media files
+src/media
+src/assets
