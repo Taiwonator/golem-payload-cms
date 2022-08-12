@@ -12,6 +12,7 @@ RUN yarn install
 
 COPY . .
 
+RUN yarn cache clean
 RUN yarn build
 
 EXPOSE 3000
