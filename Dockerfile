@@ -8,11 +8,11 @@ WORKDIR /app
 COPY package.json  .
 COPY yarn.lock .
 
+RUN yarn cache clean
 RUN yarn install
 
 COPY . .
 
-RUN yarn cache clean
 RUN yarn build
 
 EXPOSE 3000
