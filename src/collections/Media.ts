@@ -8,17 +8,25 @@ const Media: S3CollectionConfig = {
         disableLocalStorage: true,
         s3: {
           bucket: 'golem-uploads-bucket',
-          prefix: 'images', // files will be stored in bucket folder images/xyz
-          // prefix: ({ doc }) => `assets/${doc.type}`, // dynamic prefixes are possible too
+          prefix: 'images',
           commandInput: {
-            // optionally, use here any valid PutObjectCommandInput property
-            // https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-s3/interfaces/putobjectcommandinput.html
             ACL: 'public-read',  
           },
         },
         adminThumbnail: ({ doc }) => `https://golem-uploads-bucket.s3.eu-west-2.amazonaws.com/images/${doc.filename}`,
       },
-      // create a field to access uploaded files in s3 from payload api
+      hooks: {
+        beforeChange: [
+          async ({ data, req, operation, originalDoc }) => {
+            if(!data.filename) return { ...originalDoc, ...data }
+          }
+        ],
+        afterRead: [
+          async ({ doc }) => {
+            doc.url = `https://golem-uploads-bucket.s3.eu-west-2.amazonaws.com/images/${doc.filename}`
+          }
+        ]
+      },
       fields: [
         {
           name: 'url',
@@ -27,15 +35,13 @@ const Media: S3CollectionConfig = {
             create: () => false,
           },
           admin: {
-            disabled: true,
-          },
-          hooks: {
-            afterRead: [
-              ({ data: doc }) =>
-                `https://golem-uploads-bucket.s3.eu-west-2.amazonaws.com/images/${doc.filename}`,
-            ],
+            disabled: false,
           },
         },
+        {
+          name: 'alt',
+          type: 'text',
+        }
       ],
 }
 

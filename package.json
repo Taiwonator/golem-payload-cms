@@ -13,16 +13,17 @@
     "generate:types": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types"
   },
   "dependencies": {
+    "@northflank/js-client": "^0.6.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "payload": "^0.17.3"
+    "payload": "^1.0.18"
   },
   "devDependencies": {
     "@types/express": "^4.17.9",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.6",
-    "payload-s3-upload": "^1.1.2",
+    "taiwonator/payload-s3-upload": "file:../payload-s3-upload",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }

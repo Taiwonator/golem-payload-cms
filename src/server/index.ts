@@ -1,8 +1,8 @@
 import express from 'express';
 import payload from 'payload';
 import cors from 'cors'
-
 require('dotenv').config();
+
 const app = express();
 
 // Enables requests from custom subdomain
@@ -19,6 +19,7 @@ app.get('/', (_, res) => {
 });
 
 // Initialize Payload
+if(process.env.NODE_ENV === 'production') {}
 payload.init({
   secret: process.env.PAYLOAD_SECRET,
   mongoURL: process.env.MONGODB_URI,

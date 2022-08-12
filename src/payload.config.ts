@@ -1,5 +1,5 @@
 import { buildConfig } from 'payload/config';
-import s3Upload from 'payload-s3-upload';
+import s3Upload from 'taiwonator/payload-s3-upload';
 import path from 'path';
 import Categories from './collections/Categories';
 import Posts from './collections/Posts';

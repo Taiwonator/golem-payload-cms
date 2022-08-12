@@ -4,7 +4,7 @@ import { CollectionConfig } from 'payload/types';
 interface IncomingUploadTypeS3 extends IncomingUploadType {
     s3: {
         bucket: string,
-        prefix: string,
+        prefix: string | ((doc: Record<string, unknown>) => string),
         commandInput: {
             ACL: string
         }
