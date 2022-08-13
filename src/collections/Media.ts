@@ -16,11 +16,12 @@ const Media: S3CollectionConfig = {
         adminThumbnail: ({ doc }) => `https://golem-uploads-bucket.s3.eu-west-2.amazonaws.com/images/${doc.filename}`,
       },
       hooks: {
-        beforeChange: [
-          async ({ data, req, operation, originalDoc }) => {
-            if(!data.filename) return { ...originalDoc, ...data }
-          }
-        ],
+        // beforeChange: [
+        //   async ({ data, req, operation, originalDoc }) => {
+        //     if(!data.filename) return { ...originalDoc, ...data }
+        //     else return data
+        //   }
+        // ],
         afterRead: [
           async ({ doc }) => {
             doc.url = `https://golem-uploads-bucket.s3.eu-west-2.amazonaws.com/images/${doc.filename}`
