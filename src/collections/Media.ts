@@ -33,6 +33,7 @@ const Media: S3CollectionConfig = {
           type: 'text',
           access: {
             create: () => false,
+            update: () => false,
           },
           admin: {
             disabled: false,
