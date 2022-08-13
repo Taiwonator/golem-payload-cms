@@ -7577,10 +7577,10 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-modified-payload-s3-upload@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/modified-payload-s3-upload/-/modified-payload-s3-upload-0.1.2.tgz#7f15d3b3de6514abf74bb61494e5402b4835082e"
-  integrity sha512-zPscPqVA3FEUMH0+2KS0K8YxgzUuEE85xoaHLbH3R+BymILVpwINh3H1ikv9lh3Ji8WbVZiRinesohzP/UpuwQ==
+modified-payload-s3-upload@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/modified-payload-s3-upload/-/modified-payload-s3-upload-0.1.3.tgz#6e7f132572378bbadeb430ae83c11d42e3ae7079"
+  integrity sha512-qRRQIFXIVgT5DS7/wJ++/prNIxg90rM+67M0KKKqHFp47HXs5jhhvGD9mcingGgIKPNQoC5yiKCkjKqPpztVbA==
   dependencies:
     "@aws-sdk/client-s3" "^3.54.1"
     sanitize-filename "^1.6.3"
