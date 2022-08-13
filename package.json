@@ -16,7 +16,7 @@
     "@northflank/js-client": "^0.6.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "payload": "^1.0.18"
+    "payload": "^0.17.3"
   },
   "devDependencies": {
     "@types/express": "^4.17.9",

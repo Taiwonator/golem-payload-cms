@@ -19,7 +19,6 @@ app.get('/', (_, res) => {
 });
 
 // Initialize Payload
-if(process.env.NODE_ENV === 'production') {}
 payload.init({
   secret: process.env.PAYLOAD_SECRET,
   mongoURL: process.env.MONGODB_URI,
