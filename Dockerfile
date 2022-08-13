@@ -12,7 +12,7 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn build
+RUN yarn build && yarn cache clean
 
 EXPOSE 3000
 CMD [ "yarn", "run", "serve" ]
