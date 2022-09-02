@@ -2,6 +2,9 @@ import { S3CollectionConfig } from "../types"
 
 const Media: S3CollectionConfig = {
     slug: 'media',
+    access: {
+      read: () => true
+    },
     upload: {
         staticURL: '/assets',
         staticDir: 'assets',
