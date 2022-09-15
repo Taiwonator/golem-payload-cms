@@ -15,6 +15,10 @@ const Posts: CollectionConfig = {
       type: 'text',
     },
     {
+      name: 'slug',
+      type: 'text'
+    },
+    {
       name: 'snippet',
       type: 'textarea'
     },
