@@ -24,12 +24,16 @@ const Posts: CollectionConfig = {
       relationTo: 'media',
     },
     {
-      name: 'publishedDate',
-      type: 'date',
+      name: 'featured',
+      type: 'checkbox'
     },
     {
       name: 'body',
       type: 'richText'
+    },
+    {
+      name: 'publishedDate',
+      type: 'date',
     },
     {
       name: 'author',
