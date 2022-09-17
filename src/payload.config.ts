@@ -9,7 +9,7 @@ import Media from './collections/Media';
 import FieldReports from './collections/FieldReports';
 import FAQs from './collections/FAQs';
 import Projects from './collections/Projects';
-
+import Goals from './collections/Goals';
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_BASE_DNS,
@@ -24,7 +24,8 @@ export default buildConfig({
     Users,
     FieldReports,
     FAQs,
-    Projects
+    Projects,
+    Goals
   ],
   upload: {
     limits: {
