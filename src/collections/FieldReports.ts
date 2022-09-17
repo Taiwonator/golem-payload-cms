@@ -1,7 +1,7 @@
 import { CollectionConfig } from 'payload/types';
 
-const Posts: CollectionConfig = {
-  slug: 'posts',
+const FieldReports: CollectionConfig = {
+  slug: 'FieldReports',
   admin: {
     defaultColumns: ['title', 'slug', 'status'],
     useAsTitle: 'title',
@@ -19,17 +19,9 @@ const Posts: CollectionConfig = {
       type: 'text'
     },
     {
-      name: 'snippet',
-      type: 'textarea'
-    },
-    {
       name: 'heroImage',
       type: 'upload',
       relationTo: 'media',
-    },
-    {
-      name: 'featured',
-      type: 'checkbox'
     },
     {
       name: 'content',
@@ -38,11 +30,6 @@ const Posts: CollectionConfig = {
     {
       name: 'publishedDate',
       type: 'date',
-    },
-    {
-      name: 'author',
-      type: 'relationship',
-      relationTo: 'users',
     },
     {
       name: 'status',
@@ -65,4 +52,4 @@ const Posts: CollectionConfig = {
   ],
 }
 
-export default Posts;
+export default FieldReports;

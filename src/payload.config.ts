@@ -6,6 +6,7 @@ import Posts from './collections/Posts';
 import Tags from './collections/Tags';
 import Users from './collections/Users';
 import Media from './collections/Media';
+import FieldReports from './collections/FieldReports';
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_BASE_DNS,
@@ -18,6 +19,7 @@ export default buildConfig({
     Posts,
     Tags,
     Users,
+    FieldReports
   ],
   upload: {
     limits: {
