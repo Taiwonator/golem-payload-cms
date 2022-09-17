@@ -3,7 +3,7 @@ import { CollectionConfig } from 'payload/types';
 const Posts: CollectionConfig = {
   slug: 'posts',
   admin: {
-    defaultColumns: ['title', 'slug', 'status'],
+    defaultColumns: ['title', 'slug', 'featured', 'status'],
     useAsTitle: 'title',
   },
   access: {
@@ -29,7 +29,8 @@ const Posts: CollectionConfig = {
     },
     {
       name: 'featured',
-      type: 'checkbox'
+      type: 'checkbox',
+      
     },
     {
       name: 'content',

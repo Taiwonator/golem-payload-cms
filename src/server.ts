@@ -5,13 +5,18 @@ require('dotenv').config();
 
 const app = express();
 
-// Enables requests from custom subdomain
-const corsOptions = {
-  origin: process.env.GOLEM_ADMIN_URL,
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+var allowlist = [process.env.GOLEM_ADMIN_URL, process.env.GOLEM_SITE_URL]
+var corsOptionsDelegate = function (req, callback) {
+  var corsOptions;
+  if (allowlist.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+  } else {
+    corsOptions = { origin: false } // disable CORS for this request
+  }
+  callback(null, corsOptions) // callback expects two parameters: error and options
 }
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptionsDelegate))
 
 // Redirect root to Admin panel
 app.get('/', (_, res) => {
