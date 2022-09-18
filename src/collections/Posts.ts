@@ -16,7 +16,8 @@ const Posts: CollectionConfig = {
     },
     {
       name: 'slug',
-      type: 'text'
+      type: 'text',
+      required: true
     },
     {
       name: 'snippet',
@@ -39,6 +40,7 @@ const Posts: CollectionConfig = {
     {
       name: 'publishedDate',
       type: 'date',
+      required: true
     },
     {
       name: 'author',

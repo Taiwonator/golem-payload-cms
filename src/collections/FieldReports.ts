@@ -16,7 +16,8 @@ const FieldReports: CollectionConfig = {
     },
     {
       name: 'slug',
-      type: 'text'
+      type: 'text',
+      required: true
     },
     {
       name: 'heroImage',
@@ -30,6 +31,7 @@ const FieldReports: CollectionConfig = {
     {
       name: 'publishedDate',
       type: 'date',
+      required: true
     },
     {
       name: 'status',
