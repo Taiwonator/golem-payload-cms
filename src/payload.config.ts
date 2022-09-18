@@ -17,10 +17,8 @@ export default buildConfig({
     user: Users.slug,
   },
   collections: [
-    Categories,
     Media,
     Posts,
-    Tags,
     Users,
     FieldReports,
     FAQs,
