@@ -1,4 +1,16 @@
-import { CollectionConfig } from 'payload/types';
+import { CollectionAfterChangeHook, CollectionConfig } from 'payload/types';
+
+const afterChangeHok:  CollectionAfterChangeHook = async ({
+  req, // full express request
+  operation, // name of the operation ie. 'create', 'update'
+}) => {
+  if(operation === "create") {
+    fetch('https://api.netlify.com/build_hooks/63b59429244f0503e449561f', {
+      method: 'POST',
+      body: JSON.stringify({})
+    });
+  }
+}
 
 const Posts: CollectionConfig = {
   slug: 'posts',
@@ -66,6 +78,9 @@ const Posts: CollectionConfig = {
       }
     }
   ],
+  hooks: {
+    afterChange: [afterChangeHok]
+  }
 }
 
 export default Posts;
