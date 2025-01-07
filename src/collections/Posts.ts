@@ -1,12 +1,13 @@
 import { CollectionAfterChangeHook, CollectionConfig } from 'payload/types';
 
+console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
+
 const afterChangeHok:  CollectionAfterChangeHook = async ({
   req, // full express request
   operation, // name of the operation ie. 'create', 'update'
 }) => {
   console.log('operation: ', operation);
-  console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
-  if(operation === "create" && process.env.NODE_ENV === "production") {
+  if(operation === "create") {
     fetch('https://api.netlify.com/build_hooks/63b59429244f0503e449561f', {
       method: 'POST',
       body: JSON.stringify({})
