@@ -6,7 +6,7 @@ const afterChangeHok:  CollectionAfterChangeHook = async ({
 }) => {
   console.log('operation: ', operation);
   console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
-  if(operation === "create") {
+  if(operation === "create" && process.env.NODE_ENV === 'production') {
     try {
       await fetch('https://api.netlify.com/build_hooks/63b59429244f0503e449561f', {
         method: 'POST',
