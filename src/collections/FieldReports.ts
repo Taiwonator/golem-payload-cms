@@ -7,11 +7,16 @@ const afterChangeHok:  CollectionAfterChangeHook = async ({
   console.log('operation: ', operation);
   console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
   if(operation === "create") {
-    fetch('https://api.netlify.com/build_hooks/63b59429244f0503e449561f', {
-      method: 'POST',
-      body: JSON.stringify({})
-    });
+    try {
+      await fetch('https://api.netlify.com/build_hooks/63b59429244f0503e449561f', {
+        method: 'POST',
+        body: JSON.stringify({})
+      });
+    } catch (error) {
+      console.error('Error triggering Netlify build hook:', error);
+    }
   }
+  console.log('done');
 }
 
 const FieldReports: CollectionConfig = {
